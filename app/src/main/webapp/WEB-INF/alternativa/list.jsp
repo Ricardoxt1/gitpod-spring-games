@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataformas</title>
+    <title>Alternativas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -15,21 +15,27 @@
 
 <body>
 <div class="container">
-    <h1>Plataformas</h1>
-    <a href="/plataforma/insert" class="btn btn-primary">Nova Plataforma</a>
+    <h1>Alternativas</h1>
+    <a href="/alternativa/insert" class="btn btn-primary">Nova Alternativa</a>
     <table class="table">
         <tr>
             <th>ID</th>
-            <th>Nome</th>
+            <th>Texto</th>
+            <th>Correta</th>
+            <th>Falso</th>
+            <th>ID Questão</th>
             <th>&nbsp;</th>
         </tr>
-        <c:forEach items="${plataformas}" var="item">
+        <c:forEach items="${alternativas}" var="item">
             <tr>
                 <td>${item.id}</td>
-                <td>${item.nome}</td>
+                <td>${item.texto}</td>
+                <td>${item.correta}</td>
+                <td>${item.falso}</td>
+                <td>${item.questao.id_questao}</td>
                 <td>
-                    <a href="/plataforma/update?id=${item.id}">Editar</a>
-                    <a href="/plataforma/delete?id=${item.id}">Excluir</a>
+                    <a href="/alternativa/update?id=${item.id}">Editar</a>
+                    <a href="/alternativa/delete?id=${item.id}">Excluir</a>
                 </td>
             </tr>
         </c:forEach>

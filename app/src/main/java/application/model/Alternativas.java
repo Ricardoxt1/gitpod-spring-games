@@ -23,6 +23,9 @@ public class Alternativas {
     @Column
     private Boolean isCorreta;
 
+    @Column
+    private Boolean isFalso;
+
     @ManyToOne
     @JoinColumn(name = "id_questao")
     private Questoes questoes;
@@ -49,6 +52,14 @@ public class Alternativas {
 
     public void setCorreta(Boolean correta) {
         isCorreta = correta;
+    }
+
+    public Boolean getFalso() {
+        return isFalso;
+    }
+
+    public void setFalso(Boolean falso) {
+        isFalso = falso;
     }
 
     public Questoes getQuestao() {
